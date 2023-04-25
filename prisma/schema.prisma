@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // mysqlに変更
+  url      = env("DATABASE_URL")
+  relationMode = "prisma" // prismaを追加
+}
+
+model Post { // modelは単数系。@@mapで本来付けたい名前を指定する
+  id String @id @default(uuid())
+  userId String @map("user_id") // fieldはキャメルケース。@mapで本来付けたい名前にする
+  title String @unique
+  body String @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updateAt DateTime @updatedAt @map("update_at")
+
+  @@map("posts")
+}
