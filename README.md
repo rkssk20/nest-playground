@@ -1,4 +1,4 @@
-# Nest.js(GraphQL) + Prisma + PlanetScaleのテンプレート
+# Nest.js + Prisma(GraphQL) + PlanetScaleのテンプレート
 
 以下の手順に従い、Nest.jsでGraphQLサーバーを構築し、PlanetScaleと接続したもの
 ## 必要なもの
@@ -7,7 +7,7 @@
 // Nest.jsでGraphQLを使うために必要
 npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
 
-// Prismに必要
+// Prismaに必要
 npm install prisma @prisma/client
 ```
 
@@ -86,7 +86,7 @@ pscale deploy-request deploy [DB名] [数字？]
 ```
 
 - デプロイする
-- 数字のところはリクエストした時に生成された数字っぽい
+- 数字はリクエストした時に生成されたもの
 
 ```bash
 prisma generate
