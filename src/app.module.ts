@@ -5,8 +5,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { join } from 'path';
 import { CatsModule } from './cats/cats.module';
-import { PrismaService } from './prisma.service';
-import { PostResolver } from './post/post.resolver';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -16,8 +15,9 @@ import { PostResolver } from './post/post.resolver';
       sortSchema: false, // モジュールで定義されている並び
     }),
     CatsModule,
+    PostModule,
   ],
   controllers: [AppController],
-  providers: [AppService, PrismaService, PostResolver], // PrismaServiceを追加?
+  providers: [AppService],
 })
 export class AppModule {}

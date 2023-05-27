@@ -17,9 +17,20 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Query {
-  posts: [Post!]!
+  posts: [Post!]
+  post(uniquePostDto: UniquePostDto!): Post
+}
+
+input UniquePostDto {
+  id: String!
 }
 
 type Mutation {
-  createPost(title: String!, body: String!): Post!
+  createPost(createPostDto: CreatePostDto!): Post!
+}
+
+input CreatePostDto {
+  userId: String!
+  title: String!
+  body: String!
 }

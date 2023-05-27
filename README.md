@@ -5,7 +5,7 @@
 
 ```bash
 Nest.jsでGraphQLを使うために必要
-npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
+npm install @nestjs/graphql @nestjs/apollo @apollo/server graphql
 
 Prismaに必要
 npm install prisma @prisma/client
@@ -271,4 +271,4 @@ docker run -e DATABASE_URL="[PlanetScaleのURL]" -p 3000:3000 [イメージ名]
 - http:localhost:3000/graphqlにアクセスしても、CORSエラーでGraphQLのエディタは開けない
   - それ以外のエンドポイントで動作確認できる
 
-</details># nest-playground
+</details>
